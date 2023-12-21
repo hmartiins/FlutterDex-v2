@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterdex/common/repositories/pokemon_respository.dart';
+import 'package:flutterdex/features/home/container/home_container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: Container(),
+      home: HomeContainer(
+        repository: PokemonRepository(),
+      ),
     );
   }
 }
