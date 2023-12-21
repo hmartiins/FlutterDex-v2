@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdex/common/repositories/pokemon_respository.dart';
 import 'package:flutterdex/features/home/container/home_container.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: HomeContainer(
-        repository: PokemonRepository(),
+        repository: PokemonRepository(dio: Dio()),
       ),
     );
   }
