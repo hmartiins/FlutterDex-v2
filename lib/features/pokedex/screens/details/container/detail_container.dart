@@ -54,6 +54,7 @@ class _DetailContainerState extends State<DetailContainer> {
 
         if (snapshot.connectionState == ConnectionState.done &&
             snapshot.hasData) {
+          // ignore: prefer_conditional_assignment
           if (_pokemon == null) {
             _pokemon = widget.arguments.pokemon;
           }
