@@ -21,20 +21,17 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          DetailAppBarWidget(
-            pokemon: pokemon,
-            onBack: onBack,
-          ),
-          DetailListWidget(
-            pokemon: pokemon,
-            list: list,
-            controller: controller,
-            onChangePokemon: onChangePokemon,
-          )
-        ],
-      ),
-    );
+        body: CustomScrollView(
+      physics: const ClampingScrollPhysics(),
+      slivers: [
+        DetailAppBarWidget(pokemon: pokemon, onBack: onBack),
+        DetailListWidget(
+          pokemon: pokemon,
+          list: list,
+          controller: controller,
+          onChangePokemon: onChangePokemon,
+        )
+      ],
+    ));
   }
 }
