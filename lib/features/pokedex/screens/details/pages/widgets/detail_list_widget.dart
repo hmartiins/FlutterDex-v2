@@ -18,8 +18,9 @@ class DetailListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Container(
+      child: AnimatedContainer(
         color: pokemon.baseColor,
+        duration: const Duration(milliseconds: 300),
         child: Column(
           children: [
             Padding(
