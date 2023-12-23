@@ -5,15 +5,20 @@ import 'package:flutterdex/features/pokedex/screens/home/pages/widgets/type_widg
 
 class PokemonItemWidget extends StatelessWidget {
   const PokemonItemWidget(
-      {super.key, required this.pokemon, required this.onTap});
+      {super.key,
+      required this.pokemon,
+      required this.onTap,
+      required this.index});
 
   final Pokemon pokemon;
   final Function(String, DetailArguments) onTap;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onTap('/details', DetailArguments(pokemon: pokemon)),
+      onTap: () =>
+          onTap('/details', DetailArguments(pokemon: pokemon, index: index)),
       child: Stack(
         children: [
           Container(
@@ -68,7 +73,12 @@ class PokemonItemWidget extends StatelessWidget {
           Positioned(
               bottom: 12,
               right: 2,
-              child: Flexible(child: Image.network(pokemon.image)))
+              child: Flexible(
+                  child: Image.network(
+                pokemon.image,
+                height: 120,
+                fit: BoxFit.contain,
+              )))
         ],
       ),
     );

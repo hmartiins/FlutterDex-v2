@@ -28,6 +28,7 @@ class PokedexRoute extends StatelessWidget {
                 repository: repository,
                 arguments: (settings.arguments) as DetailArguments,
                 onItemTap: (String) {},
+                onBack: () => Navigator.of(context).pop(),
               );
             });
           default:
